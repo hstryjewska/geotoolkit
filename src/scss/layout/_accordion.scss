@@ -7,114 +7,110 @@
 //     list-style: none;
 // }
 .accordion-menu-holder {
-    height: 50%;
-    width: 100vw;
-    // position: fixed;
-    padding: 2rem;
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 1rem;
-    background-color: rgba($color: $background-color-primary, $alpha: 0.7);
-    // background-color: $background-color-primary;
-    z-index: 1030;
+  height: 50%;
+  width: 100vw;
+  // position: fixed;
+  padding: 2rem;
+  border-radius: 2%;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  background-color: rgba($color: $background-color-primary, $alpha: 0.4);
+  // background-color: $background-color-primary;
+  z-index: 1030;
 }
 
 .visible {
-    display: block;
+  display: block;
 }
 
 .close {
-    display: none;
+  display: none;
 }
 
-.accordion>* {
-    position: absolute;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    background-color: rgba($color: $background-color-primary, $alpha: 0.7);
+.accordion > * {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin: 0;
+  background-color: rgba($color: $background-color-primary, $alpha: 0.3);
 }
 
-.accordion>*,
+.accordion > *,
 .accordion.edge-visible,
 .accordion .accordion {
-    -webkit-transition: .3s ease all;
-    -moz-transition: .3s ease all;
-    -o-transition: .3s ease all;
-    transition: .3s ease all;
+  -webkit-transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  -o-transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
-
 
 /** Transform-related */
 
 .accordion,
-.accordion>* {
-    will-change: height, transform;
-    -webkit-perspective: 90em;
-    -moz-perspective: 90em;
-    perspective: 90em;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translateY(0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+.accordion > * {
+  will-change: height, transform;
+  -webkit-perspective: 90em;
+  -moz-perspective: 90em;
+  perspective: 90em;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translateY(0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
-
 
 /** Rule to disable transitions between gap corrections */
 
-.snap.accordion>*,
+.snap.accordion > *,
 .snap.accordion .accordion {
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -o-transition: none !important;
-    transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
-
 
 /** Headings */
 
-.accordion>*> :first-child {
-    cursor: pointer;
-    margin: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+.accordion > * > :first-child {
+  cursor: pointer;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
 
 /** Collapsible content */
 
-.accordion>*> :last-child {
-    overflow: hidden;
-    -webkit-transition: .3s ease height, .3s step-start visibility;
-    -moz-transition: .3s ease height, .3s step-start visibility;
-    -o-transition: .3s ease height, .3s step-start visibility;
-    transition: .3s ease height, .3s step-start visibility;
+.accordion > * > :last-child {
+  overflow: hidden;
+  -webkit-transition: 0.3s ease height, 0.3s step-start visibility;
+  -moz-transition: 0.3s ease height, 0.3s step-start visibility;
+  -o-transition: 0.3s ease height, 0.3s step-start visibility;
+  transition: 0.3s ease height, 0.3s step-start visibility;
 }
 
-.accordion>.closed> :last-child,
-.accordion>.closed .accordion>.open> :last-child {
-    -webkit-transition-timing-function: ease, step-end;
-    -moz-transition-timing-function: ease, step-end;
-    -o-transition-timing-function: ease, step-end;
-    transition-timing-function: ease, step-end;
-    visibility: hidden;
+.accordion > .closed > :last-child,
+.accordion > .closed .accordion > .open > :last-child {
+  -webkit-transition-timing-function: ease, step-end;
+  -moz-transition-timing-function: ease, step-end;
+  -o-transition-timing-function: ease, step-end;
+  transition-timing-function: ease, step-end;
+  visibility: hidden;
 }
 
 .accordion {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    clear: both;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  clear: both;
 }
-
 
 /** Headings */
 
@@ -122,133 +118,133 @@ h2,
 h3,
 h4:not(.subspecies),
 h5 {
-    margin: 0;
-    padding: .25em;
-    position: relative;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: pointer;
-    z-index: 2;
+  margin: 0;
+  padding: 0.5em;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  z-index: 2;
 }
 
 h2,
 h3 {
-    font-family: $font-family-headers;
-    font-weight: 300;
-    font-style: normal;
-    border-bottom: 1px solid #fff;
+  font-family: $font-family-headers;
+  font-weight: 300;
+  font-style: normal;
+  border-bottom: 1px solid #fff;
 }
 
 h4,
 h5,
 h6 {
-    font-family: $font-family-bolded-text;
-    font-weight: 600;
-    font-style: normal;
-    border-bottom: 1px solid #fff;
+  font-family: $font-family-bolded-text;
+  font-weight: 600;
+  font-style: normal;
+  border-bottom: 1px solid #fff;
 }
 
 .accordion-shop h3,
 .accordion-account h3,
 .accordion-articles h3 {
-    color: #ccc;
-    background-color: #252424;
-    border-bottom: 1px solid #161616;
+  color: #ccc;
+  background-color: rgba(37, 36, 36, 0.7);
+  border-bottom: 1px solid #161616;
 }
 
 .accordion-shop h2,
 .accordion-shop h4:not(.subspecies),
 .accordion-shop h5,
 .accordion-shop h6 {
-    color: #0a7523;
-    border-bottom: 1px solid #161616;
+  color: #0a7523;
+  border-bottom: 1px solid #161616;
 }
 
 .accordion-shop h5,
 .accordion-shop h6 {
-    background-color: rgba($color: #252424, $alpha: 0.2)
+  background-color: rgba($color: #252424, $alpha: 0.2);
 }
 
 .accordion-shop h5:hover,
 .accordion-shop h6:hover {
-    background-color: rgba($color: #fff, $alpha: 0.2)
+  background-color: rgba($color: #fff, $alpha: 0.2);
 }
 
 .accordion-account h2,
 .accordion-account h4:not(.subspecies),
 .accordion-account h5 {
-    color: #e9ad07;
-    border-bottom: 1px solid #161616;
+  color: #e9ad07;
+  border-bottom: 1px solid #161616;
 }
 
 .accordion-articles h2,
 .accordion-articles h4:not(.subspecies),
 .accordion-articles h5 {
-    color: #05508d;
-    border-bottom: 1px solid #161616;
+  color: #05508d;
+  border-bottom: 1px solid #161616;
 }
 
 h2:focus::before,
 h3:focus::before,
 h4:focus::before,
 h5:focus::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    color: #027508;
-    background: $background-color-primary;
-    opacity: .5;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #027508;
+  background: $background-color-primary;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 h2 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 h3 {
-    font-size: 1.8em;
+  font-size: 1.8em;
 }
 
 h4 {
-    margin: 1em 0 .5em;
-    font-size: 1.5em;
+  margin: 1em 0 0.5em;
+  font-size: 1.5em;
 }
 
 h5 {
-    font-size: 1.3em;
-    margin: 0;
+  font-size: 1.3em;
+  margin: 0;
 }
 
 h6 {
-    font-size: 1.3em;
-    margin: 0;
-    padding: .5em 0 .25em;
-    border-bottom: 1px solid #fff;
+  font-size: 1.3em;
+  margin: 0;
+  padding: 1em;
+  border-bottom: 1px solid #fff;
 }
 
 .fold .fold {
-    padding: .5em 1em;
+  padding: 0.5em 1em;
 }
 
 li {
-    background: #050505;
-    color: #fff;
-    width: 100%;
+  background: #050505;
+  color: #fff;
+  width: 100%;
 }
 
 p {
-    line-height: 1.45;
+  line-height: 1.45;
 }
 
 p:first-child {
-    margin-top: 0;
-    padding-top: 1em;
+  margin-top: 0;
+  padding-top: 1em;
 }
 
 p:last-child {
-    margin-bottom: 0;
-    padding-bottom: 1em;
+  margin-bottom: 0;
+  padding-bottom: 1em;
 }

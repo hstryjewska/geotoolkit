@@ -1,8 +1,5 @@
-document.querySelector('#globalHeader-collapse-button').addEventListener('click', function(e) {
+export const navToggle = () => {
+  let select = document.querySelector(".accordion-menu-holder");
 
-    let select = document.querySelector('.accordion-menu-holder');
-
-
-    select.classList.toggle('close');
-
-});
+  select.classList.remove("close");
+};
